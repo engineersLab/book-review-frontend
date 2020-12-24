@@ -1,0 +1,206 @@
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+  
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.cus-top-margin{
+    margin-top: 10px !important;
+}
+.cus-top-margin-2{
+    margin-top: 20px;
+}
+.cus-bottom-margin{
+    margin-bottom: 10px;
+}
+.cus-bottom-margin-2{
+    margin-bottom: 20px;
+}
+.cus-left-margin{
+    margin-left: 10px;
+}
+.cus-left-margin-2{
+    margin-left: 20px;
+}
+.cus-left-margin-3{
+    margin-left: 30px;
+}
+.cus-right-margin{
+    margin-right: 10px;
+}
+.cus-horizontal-margin{
+    margin-left: 10px;
+}
+.cus-vertical-margin{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.cus-margin{
+    margin:10px
+}
+.cus-white{
+    color: white;
+}
+.cus-red{
+    color: red;
+}
+.cus-blue{
+    color: lightblue;
+}
+.cus-pointer{
+    cursor: pointer;
+}
+.cus-display-card{
+    display: inline-block;
+    min-width: 200px;
+    max-width: 200px;
+    min-height: 300px;
+    max-height: 300px;
+    padding: 5px;
+    margin: 10px;
+    box-shadow: 5px 5px 5px grey;  
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: lightblue;
+}
+.cus-display-card-genre{
+    display: inline-block;
+    min-width: 200px;
+    max-width: 200px;
+    max-height: 230px;
+    padding: 5px;
+    margin: 10px;
+    box-shadow: 5px 5px 5px grey;  
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: lightblue;
+}
+.cus-display-card-list{
+    display: inline-block;
+    min-width: 200px;
+    max-width: 200px;
+    min-height: 300px;
+    max-height: 300px;
+    padding: 5px;
+    margin: 10px;
+    box-shadow: 5px 5px 5px grey;  
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: lightblue;
+}
+.cus-card-arrangement{
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+}
+.cus-card-arrangement-book-list{
+    display: flex;
+    overflow-x: auto;
+}
+.cus-image-dimension{
+    min-width: auto;
+    min-height: 160px;
+    max-width: 200px;
+    max-height: 160px;
+}
+.cus-image-dimension-genre{
+    min-width: auto;
+    min-height: 110px;
+    max-width: 200px;
+    max-height: 110px;
+}
+.cus-image-height{
+    min-height: 160px;
+    min-width: 100px;
+    max-height: 160px;
+    max-width: 100px;
+}
+.cus-link{
+    color: black;
+}
+.cus-background{
+    background-color: black;
+}
+.cus-page{
+    height: 100%;
+    width: 100%;
+}
+.cus-toast-body{
+    position: absolute;
+    width: 100%;
+    top:85vh;
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    background: red;
+    text-align: center;
+}
+.cus-not-found{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    
+}
+.cus-toast-message{
+    font-weight:bold ;
+}
+.cus-inline-block{
+    display: inline-block;
+}
+.cus-signin-image-size{
+    width: 600px;
+    height: 600px;
+}
+.cus-overflow-x{
+    overflow-x: hidden;
+}
+.cus-form-input{
+    background: #dbdbdb;
+}
+.cus-form-input:focus{
+    background: #fff;
+}
+.cus-nav-item{
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.cus-nav-button{
+    background: transparent;
+    color: red;
+    border-color: transparent;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.cus-nav-button:hover{
+    background: red;
+    color: whitesmoke;
+    border-color: transparent;
+}
+.cus-no-margin{
+    margin:0px;
+    padding: 0px;
+}
