@@ -7,12 +7,12 @@ import {useHistory} from 'react-router-dom'
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 
-
 const Home = () =>{
 
-    const {getBooks,getAuthors,getGenres,setCurrentState,state:{Books,Genres,Authors}} = useContext(DataContext)
+    const {getBooks,getAuthors,getGenres,state:{Books,Genres,Authors}} = useContext(DataContext)
     const [loading, setLoading] = useState(true)
     const history = useHistory()
+    
     useEffect(()=>{
         initializePage()
     },[])
@@ -26,7 +26,7 @@ const Home = () =>{
     if(Genres != null && Genres.length>0 && loading){
         setTimeout(() => {
             setLoading(false)
-        }, 3000);
+        }, 250);
     }
 
     const goToBook = (currentBook) =>{

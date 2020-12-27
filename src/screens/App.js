@@ -10,6 +10,12 @@ import Signin from './Signin'
 
 
 class App extends React.Component{
+
+    NoMatchPage = () => {
+        return (
+            <h3 className='cus-not-found'>Error 404 - Requested page not found</h3>
+        );
+    };
     render(){
       return(  
           <BrowserRouter>
@@ -21,6 +27,7 @@ class App extends React.Component{
                   <Route exact path='/book-list-type' component={BookListType}></Route>
                   <Route exact path='/signup' component={Signup}></Route>
                   <Route exact path='/signin' component={Signin}></Route>
+                  <Route component={this.NoMatchPage}/>
               </Switch>
           </BrowserRouter>
       )

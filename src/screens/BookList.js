@@ -41,7 +41,7 @@ const BookList = () =>{
                                     {
                                         book.genre==currentState.name
                                         ?
-                                        <Card className='cus-display-card-list cus-pointer' onClick={goToBook(book)}>
+                                        <Card className='cus-display-card-list cus-pointer' onClick={()=>goToBook(book)}>
                                             <div className="cus-image-dimension" >
                                                 <Card.Img className='cus-image-height' variant="top" src={book.image_url} alt='Image' />
                                             </div>
@@ -61,8 +61,7 @@ const BookList = () =>{
                                     {
                                         book.author==currentState.name
                                         ?
-                                        
-                                        <Card className='cus-display-card-list cus-pointer' onClick={goToBook(book)}>
+                                        <Card className='cus-display-card-list cus-pointer' onClick={()=>goToBook(book)}>
                                             <div className="cus-image-dimension" >
                                                 <Card.Img className='cus-image-height' variant="top" src={book.image_url} alt='Image' />
                                             </div>
@@ -74,8 +73,7 @@ const BookList = () =>{
                                         :
                                         null
                                     }
-                                    </div>
-                                     
+                                    </div>             
                                 )
                             }
                         })

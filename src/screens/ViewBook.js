@@ -1,20 +1,17 @@
 import React, {useState, useEffect, useContext} from 'react'
-import {Form, Button, Card} from 'react-bootstrap'
+import {Form, Button} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import Avatar from '@material-ui/core/Avatar'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 import {Context as DataContext} from '../context/DataContext'
-import {Context as AuthContext} from '../context/AuthContext'
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 
-const ViewBook = (props) =>{
+const ViewBook = () =>{
 
-    // const book = props.location.book
     const {postComment,getComments,state:{Comments}} = useContext(DataContext)
-    const {state:{LoginState}} = useContext(AuthContext)
     const [book,setBook] = useState('')
     const [comment, setComment] = useState('')
     const [comments,setComments] = useState([])
@@ -23,7 +20,6 @@ const ViewBook = (props) =>{
 
     const [flag, setFlag] = useState(true)
     const [commentFlag, setCommentFlag] = useState(true)
-    // console.log(Comments)
     
     useEffect(()=>{
         const initializePage = async () =>{
@@ -49,14 +45,14 @@ const ViewBook = (props) =>{
             window.location.reload()
         }, 1000);
     }
+    
     if(book){
-        console.log(typeof(book.review))
         return(
             <div className='cus-background'>
                 <Navbar/>
                 <div className='cus-margin row' >
                     <div className='col'>
-                        <h2 style={{color:'white',marginTop:40}} >{book.book_name}</h2>
+                        <h2 className='cus-top-margin-3' >{book.book_name}</h2>
                         <p className='cus-white'><b>Author:</b> {book.author} </p>
                         <p className='cus-white'><b>Genre:</b> {book.genre} </p>
                         <p className='cus-white'><b>Description:</b> {book.description} </p>
@@ -69,11 +65,11 @@ const ViewBook = (props) =>{
                     </div>
                 </div>
                 <div className='cus-margin'>
-                    <h4 style={{color:'white',marginTop:40}}>Ak's Review</h4>
+                    <h4 className='cus-top-margin-3'>Ak's Review</h4>
                     <p  className='cus-white' dangerouslySetInnerHTML={{__html: book.review}} />
                 </div>
                 <div className='cus-margin'>
-                    <h6 style={{color:'white',marginTop:40}}>Add your views on this book</h6>
+                    <h6 className='cus-top-margin-3'>Add your views on this book</h6>
                     {
                         user
                         ?
@@ -95,7 +91,7 @@ const ViewBook = (props) =>{
                     
                 </div>
                 <div className='cus-margin'> 
-                    <h6 style={{color:'white',marginTop:40}}>Comments</h6>
+                    <h6 className='cus-top-margin-3'>Comments</h6>
                         {
                             Comments.length>0 && Comments == 'No comments yet'
                             ?

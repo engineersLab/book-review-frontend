@@ -1,12 +1,10 @@
 import createDataContext from './createDataContext'
-import {today} from '../components/getToday'
 import Api from '../api/Api'
 
 const dataReducer = (state, action) =>{
 
     switch(action.type){
         case 'add_email':
-            console.log(action.payload)
             return {...state, Email:action.payload}
         case 'get_books':
             return {...state, Books:action.payload}
@@ -28,7 +26,6 @@ const dataReducer = (state, action) =>{
 }
 
 const getBooks = dispatch => async()=>{
-
     try{
         await Api.post('/getBooks')
         .then(async (res)=>{
@@ -40,7 +37,6 @@ const getBooks = dispatch => async()=>{
         })
         
     }catch(err) {
-        // dispatch({type:'add_error', payload:'Something went wrong'})
         console.log("Error",err.message)
     }
 }
@@ -57,7 +53,6 @@ const getGenres = dispatch => async()=>{
         })
         
     }catch(err) {
-        // dispatch({type:'add_error', payload:'Something went wrong'})
         console.log("Error",err.message)
     }
 }
@@ -74,7 +69,6 @@ const getAllGenres = dispatch => async()=>{
         })
         
     }catch(err) {
-        // dispatch({type:'add_error', payload:'Something went wrong'})
         console.log("Error",err.message)
     }
 }
@@ -91,16 +85,13 @@ const getAuthors = dispatch => async()=>{
         })
         
     }catch(err) {
-        // dispatch({type:'add_error', payload:'Something went wrong'})
         console.log("Error",err.message)
     }
 }
 
 const postBook = dispatch => async (book_name, author, genre, description,review, image_url) =>{
-    
     try{
         const res = await Api.post('/postBook',{book_name, author, genre, description, review, image_url})
-        console.log(res)
     }catch(err){
         console.log(err.message)
     }
@@ -108,8 +99,7 @@ const postBook = dispatch => async (book_name, author, genre, description,review
 
 const postComment = dispatch => async(bookId,email,username,comment) =>{
     try{
-        console.log(bookId,email,comment)
-        const res = await Api.post('/postComment',{id:bookId,email,username,comment})
+        await Api.post('/postComment',{id:bookId,email,username,comment})
     }catch(err){
         console.log(err.message)
     }
@@ -117,10 +107,8 @@ const postComment = dispatch => async(bookId,email,username,comment) =>{
 
 const getComments = dispatch => async(bookId) =>{
     try{
-        console.log(bookId)
         const res = await Api.post('/getComments',{id:bookId})
-        console.log(res.data)
-        dispatch({type:'set_comments',payload:res.data.result})
+        await dispatch({type:'set_comments',payload:res.data.result})
         
     }catch(err){
         console.log(err.message)

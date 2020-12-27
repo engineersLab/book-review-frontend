@@ -1,9 +1,7 @@
 import createDataContext from './createDataContext'
-import {today} from '../components/getToday'
 import Api from '../api/Api'
 
 const authReducer = (state, action) =>{
-
     switch(action.type){
         case 'add_email':
             return {...state, Email:action.payload}
@@ -48,13 +46,14 @@ const signin = dispatch => async(email,password)=>{
             await dispatch({type:'signin_error', payload:"Incorrect password"})
             return
         }else if(res.data == "No user"){
-            // console.log("User does not exist")
             await dispatch({type:'signin_error', payload:"User does not exist"})
             return
         }
         await dispatch({type:'set_username',payload:res.data.username})
-        await dispatch({type:'login_state',payload:{state:"Success",username:res.data.username,email:res.data.email,user_type:res.data.user_type}})
-        // console.log("Signin success")
+        await dispatch({
+            type:'login_state',
+            payload:{state:"Success",username:res.data.username,email:res.data.email,user_type:res.data.user_type}
+        })
         
     }catch(err){
         console.log((err.message))

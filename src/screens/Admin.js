@@ -73,9 +73,6 @@ const Admin = () =>{
                     setBookName(res.data.items[0].volumeInfo.title)
                     setAuthorName(res.data.items[0].volumeInfo.authors[0])
                     setDescription(res.data.items[0].volumeInfo.description)
-                    if(res.data.items[0].volumeInfo.categories){
-                        setGenre(res.data.items[0].volumeInfo.categories[0])
-                    }
                     setImageUrl(res.data.items[0].volumeInfo.imageLinks.thumbnail)
 
                 }                
@@ -85,8 +82,6 @@ const Admin = () =>{
                 setTimeout(() => {
                     setIsbnFlag(false)
                 }, 3000);
-
-                console.log("Book fetch error",err.message)
             }
         }else{
             setIsbnFlag(true)
@@ -133,10 +128,6 @@ const Admin = () =>{
                                         })}
                                     </Form.Control>
                                 </Form.Group>
-                                {/* <Form.Group>
-                                    <Form.Label className='cus-white'>Genre</Form.Label>
-                                    <Form.Control className='cus-form-input' type="text" value={genre} placeholder="Enter book genre" onChange={(val)=>setGenre(val.target.value)} />
-                                </Form.Group> */}
                                 <Form.Group>
                                     <Form.Label className='cus-white'>Description</Form.Label>
                                     <Form.Control className='cus-form-input' type="text" value={description} as="textarea" rows={3} placeholder="Description" onChange={(val)=>setDescription(val.target.value)} />
@@ -165,16 +156,6 @@ const Admin = () =>{
                             </Form.Group>
                         </Form>
                         <Button onClick={()=>postBook(bookName, authorName, genre, description,review, imageUrl)} >Submit</Button>
-                    {/* <Button onClick={Api.post('/insertGenres')} >Insert genre</Button> */}
-                    {/* <Button 
-                        onClick={()=>Api.post('/postBook',{
-                            book_name:"The Kiss Quotient",
-                            genre:"Love",
-                            author:"Helen Hoang",
-                            description:'A heartwarming and refreshing debut novel that proves one thing: there"s not enough data in the world to predict what will make your heart tick.',
-                            review:'A heartwarming and refreshing debut novel that proves one thing: there"s not enough data in the world to predict what will make your heart tick.',
-                            image_url:"https://firebasestorage.googleapis.com/v0/b/book-review-application.appspot.com/o/book-images%2Fthekissquotient.jfif?alt=media&token=2c27e3ca-f79b-47f2-a729-861a0de1c613"
-                            })} >ISBN</Button> */}
                 </div>
                 {
                     isbnFlag
